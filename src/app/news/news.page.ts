@@ -3,13 +3,13 @@ import { Router } from '@angular/router';
 import { NewsService } from '../news.service';
 
 @Component({
-  selector: 'app-tab1',
-  templateUrl: './tab1.page.html',
-  styleUrls: ['./tab1.page.scss'],
+  selector: 'app-news',
+  templateUrl: './news.page.html',
+  styleUrls: ['./news.page.scss'],
 })
-export class Tab1Page implements OnInit {
+export class NewsPage implements OnInit {
 
-  constructor(private NewsService:NewsService , private router:Router) { }
+  constructor( private NewsService:NewsService ,private router:Router ) { }
 
   data:any;
 
@@ -33,10 +33,12 @@ export class Tab1Page implements OnInit {
     });
   }
 
+
   onGoToNewsSinglePage(article){ //console.log(article);
     this.NewsService.currentArticle = article;
     this.router.navigate(['/news-single'])
   }
+
 
 
 }
